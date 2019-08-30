@@ -1,10 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Entity;
 
 namespace Core.ApplicationService
 {
-    interface IPetService
+    public interface IPetService
     {
+        List<Pet> FindAllPets();
+
+        Pet Add(Pet pet);
+
+        Pet FindSingle(int id);
+
+        void RemovePet(int id);
+
     }
 }

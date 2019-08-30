@@ -6,5 +6,6 @@ namespace Core.DomainService
 {
     class PetRepository
     {
+     
     }
 }

@@ -6,7 +6,8 @@ namespace ConsolePetShop
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello diller!");
+            Menu menu = new Menu();
+            menu.Run();
         }
     }
 }

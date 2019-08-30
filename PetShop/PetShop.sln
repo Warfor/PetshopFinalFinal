@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePetShop", "PetShop\ConsolePetShop.csproj", "{2CC14CD1-5521-46C5-AD17-E27DE611C58E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsolePetShop", "PetShop\ConsolePetShop.csproj", "{2CC14CD1-5521-46C5-AD17-E27DE611C58E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C21FA63B-73B3-41F8-9D61-E181242C6016} = {C21FA63B-73B3-41F8-9D61-E181242C6016}
+		{2A972156-7146-453E-BF4A-05C997CD8370} = {2A972156-7146-453E-BF4A-05C997CD8370}
+		{A2C93E8C-D5E1-491D-B95B-451A36E08FA0} = {A2C93E8C-D5E1-491D-B95B-451A36E08FA0}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Petshop.Core", "Petshop.Core", "{6C615D8C-36B9-4D46-A89A-1DE6D15DDED4}"
 EndProject
@@ -13,11 +18,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PetShop.Infrastructure.Data
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PetConsole", "PetConsole", "{46D92ECA-39B9-4116-B174-B89A64A09F01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{A2C93E8C-D5E1-491D-B95B-451A36E08FA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{A2C93E8C-D5E1-491D-B95B-451A36E08FA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{2A972156-7146-453E-BF4A-05C997CD8370}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity", "Entity\Entity.csproj", "{2A972156-7146-453E-BF4A-05C997CD8370}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{C21FA63B-73B3-41F8-9D61-E181242C6016}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{C21FA63B-73B3-41F8-9D61-E181242C6016}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

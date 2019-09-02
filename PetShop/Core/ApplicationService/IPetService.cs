@@ -15,5 +15,8 @@ namespace Core.ApplicationService
 
         void RemovePet(int id);
 
+        List<Pet> SortByPrice(List<Pet> pets);
+        List<Pet> SearchRace(String race);
+
     }
 }

@@ -21,7 +21,7 @@ namespace Infrastructure.Repositories
             FakeDB.PetList.Remove(FakeDB.PetList.FirstOrDefault(pet => pet.Id == id));
         }
 
-        public List<Pet> ReadAll()
+        public IEnumerable<Pet> ReadAll()
         {
             return FakeDB.PetList;
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using Core.DomainService;
@@ -18,7 +19,7 @@ namespace Core.ApplicationService
 
         public List<Pet> FindAllPets()
         {
-            return petrepository.ReadAll();
+            return petrepository.ReadAll().ToList();
         }
 
         public Pet Add(Pet pet)
@@ -34,6 +35,30 @@ namespace Core.ApplicationService
         public void RemovePet(int id)
         {
             petrepository.RemovePet(id);
+        }
+        public List<Pet> SearchRace(String PetRace)
+        {
+            List<Pet> temp = new List<Pet>();
+               
+            foreach (var pet in petrepository.ReadAll().ToList())
+            {
+                if (pet.Race.Equals(PetRace))
+                {
+                    temp.Add(pet);
+                }
+            }
+
+            return temp;
+
+        }
+
+
+        public List<Pet> SortByPrice(List<Pet> pets)
+        {
+            List<Pet> petts = pets;
+            petts.Sort((pet1, pet2) => pet1.Price.CompareTo(pet2.Price));
+            return pets;
+
         }
     }
 }

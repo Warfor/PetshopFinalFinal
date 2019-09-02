@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Entity;
@@ -7,7 +8,7 @@ namespace Core.DomainService
 {
     public interface IPetRepository
     {
-        List<Pet> ReadAll();
+        IEnumerable <Pet> ReadAll();
 
         Pet create(Pet pet);
 

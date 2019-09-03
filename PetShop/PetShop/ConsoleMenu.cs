@@ -12,7 +12,7 @@ using Infrastructure.Repositories;
 
 namespace ConsolePetShop
 {
-    class Menu
+    class ConsoleMenu : IConsoleMenu
     {
         private IPetService petService;
         public void Run()

@@ -25,6 +25,8 @@ namespace UI.RestApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddScoped<IPetRepository, PetRepository>();
+            services.AddScoped<IPetService, PetService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

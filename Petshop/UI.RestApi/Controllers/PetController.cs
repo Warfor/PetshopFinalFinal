@@ -2,41 +2,50 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.ApplicationService;
+using Entity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace UI.RestApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class PetController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        private readonly IPetService _petService;
+
+        public PetController(IPetService petService)
         {
-            return new string[] { "value1", "value2" };
+            _petService = petService;
         }
 
-        // GET api/values/5
+        // GET api/pets
+        [HttpGet]
+        public ActionResult<IEnumerable<Pet>> Get()
+        {
+            return _petService.FindAllPets();
+        }
+
+        // GET api/pets/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
             return "value";
         }
 
-        // POST api/values
+        // POST api/pets
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/values/5
+        // PUT api/pets/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/values/5
+        // DELETE api/pets/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

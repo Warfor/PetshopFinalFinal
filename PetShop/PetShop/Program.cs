@@ -17,8 +17,8 @@ namespace ConsolePetShop
             FakeDB.InitData();
 
             var serviceCollection = new ServiceCollection();
-            serviceCollection.AddScoped<IPetRepository, PetRepository>();
             serviceCollection.AddScoped<IConsoleMenu, ConsoleMenu>();
+            serviceCollection.AddScoped<IPetRepository, PetRepository>();
             serviceCollection.AddScoped<IPetService, PetService>();
 
             var serviceProvider = serviceCollection.BuildServiceProvider();

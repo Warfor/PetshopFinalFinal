@@ -10,11 +10,11 @@ namespace UI.RestApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PetController : ControllerBase
+    public class PetsController : ControllerBase
     {
         private readonly IPetService _petService;
 
-        public PetController(IPetService petService)
+        public PetsController(IPetService petService)
         {
             _petService = petService;
         }

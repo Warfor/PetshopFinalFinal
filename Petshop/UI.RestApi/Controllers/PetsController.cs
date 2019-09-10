@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Core.ApplicationService;
 using Entity;
@@ -28,27 +29,37 @@ namespace UI.RestApi.Controllers
 
         // GET api/pets/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<Pet> Get(int id)
         {
-            return "value";
+            if (id < 1) return BadRequest("Id must be greater than 0");
+
+            return _petService.FindPetById(id);
         }
 
         // POST api/pets
         [HttpPost]
-        public void Post([FromBody] string value)
+        public Pet Post([FromBody] Pet pet)
         {
+            return _petService.Add(pet);
         }
 
         // PUT api/pets/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public ActionResult Put(int id, [FromBody] Pet pet)
         {
+            if (id < 1 || id != pet.Id)
+            {
+                return BadRequest(" fejl bitch");
+            }
+            return Ok(_petService.UpdatePet(pet));
         }
 
         // DELETE api/pets/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _petService.RemovePet(id);
+        
         }
     }
 }

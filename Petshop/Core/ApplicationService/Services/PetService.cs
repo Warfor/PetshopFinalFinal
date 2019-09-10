@@ -31,6 +31,30 @@ namespace Core.ApplicationService.Services
             return petrepository.ReadAll().FirstOrDefault(pet => pet.Id == id);
         }
 
+        public Pet FindPetById(int ID)
+        {
+            {
+                foreach (var pet in FindAllPets())
+                {
+                    if (pet.Id == ID)
+
+                    {
+                        return pet;
+                    }
+                }
+                return null;
+            }
+        }
+
+        public Pet UpdatePet(Pet petUpdate)
+        {
+            var pet = FindPetById(petUpdate.Id);
+            pet.Name = petUpdate.Name;
+            pet.Color = petUpdate.Color;
+            pet.Race = petUpdate.Race;
+            return pet;
+        }
+
         public void RemovePet(int id)
         {
             petrepository.RemovePet(id);
@@ -50,8 +74,6 @@ namespace Core.ApplicationService.Services
             return temp;
 
         }
-
-
         public List<Pet> SortByPrice(List<Pet> pets)
         {
             List<Pet> petts = pets;

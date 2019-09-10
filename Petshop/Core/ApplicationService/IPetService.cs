@@ -14,6 +14,9 @@ namespace Core.ApplicationService
         Pet FindSingle(int id);
 
         void RemovePet(int id);
+        Pet UpdatePet(Pet pets);
+
+        Pet FindPetById(int id);
 
         List<Pet> SortByPrice(List<Pet> pets);
         List<Pet> SearchRace(String race);

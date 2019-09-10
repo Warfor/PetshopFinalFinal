@@ -9,11 +9,13 @@ namespace Infrastructure
     {
         internal static int PetId = 1;
         internal static readonly List<Pet> PetList = new List<Pet>();
+        internal static readonly List<Owner> OwnerList = new List<Owner>();
 
         public static void InitData()
         {
             Pet pet1 = new Pet
             {
+                Id = 1,
                 Birthdate = DateTime.Now,
                 Name = " Trex ",
                 Color = " White ",
@@ -25,6 +27,7 @@ namespace Infrastructure
 
             Pet pet2 = new Pet
             {
+                Id = 2,
                 Birthdate = DateTime.Now,
                 Name = " Rex ",
                 Color = " black ",
@@ -35,6 +38,7 @@ namespace Infrastructure
             };
             Pet pet3 = new Pet
             {
+                Id = 3,
                 Birthdate = DateTime.Now,
                 Name = " Ricko ",
                 Color = " black ",
@@ -45,6 +49,7 @@ namespace Infrastructure
             };
             Pet pet4 = new Pet
             {
+                Id = 4,
                 Birthdate = DateTime.Now,
                 Name = " Teison ",
                 Color = " white ",
@@ -55,6 +60,7 @@ namespace Infrastructure
             };
             Pet pet5 = new Pet
             {
+                Id = 5,
                 Birthdate = DateTime.Now,
                 Name = " Coli ",
                 Color = " White ",
@@ -65,6 +71,7 @@ namespace Infrastructure
             };
             Pet pet6 = new Pet
             {
+                Id = 6,
                 Birthdate = DateTime.Now,
                 Name = " Dummi ",
                 Color = " orange ",

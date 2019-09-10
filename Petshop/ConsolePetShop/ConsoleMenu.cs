@@ -198,6 +198,7 @@ namespace ConsolePetShop
 
         }
 
+        /*
         public Pet FindPetByID()
         {
             {
@@ -221,8 +222,9 @@ namespace ConsolePetShop
                 return null;
                 //StartMenu();
             }
+            
         }
-
+        */
         public void EditPet()
         {
             Pet findPetById = FindPetByID();

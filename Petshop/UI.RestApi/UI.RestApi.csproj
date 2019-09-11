@@ -21,6 +21,7 @@
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Entity\Entity.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\PetShop.Infrastructure.SQL\PetShop.Infrastructure.SQL.csproj" />
   </ItemGroup>
 
 </Project>

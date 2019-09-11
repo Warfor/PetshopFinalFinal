@@ -27,22 +27,31 @@ namespace Core.ApplicationService
             return ownerRepository.ReadAll().ToList();
         }
 
-        public Owner FindOwnerById(Owner owner)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Remove(Owner owner)
         {
             ownerRepository.Remove(owner);
         }
 
-        public Owner Update(Owner humanOwner)
+        public Owner Update(int id)
         {
-            Owner owner = ownerRepository.FindOwnerById(humanOwner.Id);
+            
+        }
+
+        public void RemoveOwner(int id)
+        {
+            ownerRepository.Remove(id);
+        }
+
+        public Owner UpdateOwner(int owners)
+        {
+            Owner owner = ownerRepository.FindOwnerById(owners);
             owner = ownerRepository.Update(owner);
             return owner;
         }
 
+        public Owner FindOwnerById(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

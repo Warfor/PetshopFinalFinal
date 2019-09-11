@@ -14,10 +14,10 @@ namespace Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public Owner Update(Owner HumanOwner)
+        public Owner Update(int id)
         {
-             Owner owner = FindOwnerById(HumanOwner.Id);
-            owner = Update(HumanOwner);
+             Owner owner = FindOwnerById(id);
+            owner = Update(id);
 
             return owner;
         }
@@ -37,7 +37,7 @@ namespace Infrastructure.Repositories
             {
                 foreach (var owner in ReadAll())
                 {
-                    if (owner.Id == ID)
+                    if (owner.id == ID)
 
                     {
                         return owner;

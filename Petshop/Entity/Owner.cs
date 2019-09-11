@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Entity
 {
-    class Owner
+   public class Owner
     {
+        public String Name { get; set; }
+        public int id { get; set; }
     }
 }

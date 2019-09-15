@@ -22,7 +22,7 @@ namespace Infrastructure.Repositories
             return owner;
         }
 
-        public void Remove(Owner owner)
+        public Owner Remove(Owner owner)
         {
             Remove(owner);
         }

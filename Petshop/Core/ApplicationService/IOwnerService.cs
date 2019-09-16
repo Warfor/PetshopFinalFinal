@@ -8,9 +8,10 @@ namespace Core.ApplicationService
    public interface IOwnerService
     {
 
-        void RemoveOwner(int id);
-        Owner UpdateOwner(Owner owners);
+        void RemoveOwner(Owner owner);
+        void UpdateOwner(Owner owners);
         Owner FindOwnerById(int id);
         List<Owner> ReadAll();
+        Owner CreateOwner(Owner owner);
     }
 }

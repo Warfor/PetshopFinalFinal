@@ -8,6 +8,7 @@ namespace Infrastructure
     public class FakeDB
     {
         internal static int PetId = 1;
+        internal static int OwnerId = 1;
         internal static readonly List<Pet> PetList = new List<Pet>();
         internal static readonly List<Owner> OwnerList = new List<Owner>();
 

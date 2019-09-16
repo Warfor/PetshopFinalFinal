@@ -38,25 +38,23 @@ namespace UI.RestApi.Controllers
         [HttpPost]
         public Owner Post([FromBody] Owner owner)
         {
-            return _OwnerService.Create(owner);
+            return _OwnerService.CreateOwner(owner);
         }
 
         // PUT api/owners/5
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Owner owner)
+        public void Put(int id, [FromBody] Owner owner)
         {
-            if (id < 1 || id != owner.Id)
-            {
-                return BadRequest(" fejl bitch");
-            }
-            return Ok(_OwnerService.Update(owner));
+            if (id < 1 || id != owner.id)
+         
+           _OwnerService.UpdateOwner(owner);
         }
 
         // DELETE api/owners/5
         [HttpDelete("{id}")]
         public void Delete(Owner owner)
         {
-            _OwnerService.Remove(owner);
+            _OwnerService.RemoveOwner(owner);
 
         }
     }

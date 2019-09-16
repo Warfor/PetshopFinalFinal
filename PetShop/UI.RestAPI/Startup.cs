@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Core.ApplicationService;
 using Core.ApplicationService.Services;
 using Core.DomainService;
+using Infrastructure;
 using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -24,8 +25,9 @@ namespace UI.RestApi
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            FakeDB.InitData();
         }
-
+        
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.

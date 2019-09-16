@@ -13,6 +13,11 @@ namespace Core.ApplicationService
     {
         private IOwnerRepository ownerRepository;
 
+        public OwnerService(IOwnerRepository IOwnerRep)
+        {
+            ownerRepository = IOwnerRep;
+        }
+        
 
         public void RemoveOwner(Owner owner)
         {

@@ -7,10 +7,10 @@ namespace Infrastructure
 {
     public class FakeDB
     {
-        internal static int PetId = 1;
-        internal static int OwnerId = 1;
-        internal static readonly List<Pet> PetList = new List<Pet>();
-        internal static readonly List<Owner> OwnerList = new List<Owner>();
+        public static int PetId = 1;
+        public static int OwnerId = 1;
+        public static List<Pet> PetList = new List<Pet>();
+        public static List<Owner> OwnerList = new List<Owner>();
 
         public static void InitData()
         {
@@ -97,13 +97,13 @@ namespace Infrastructure
 
             Owner owner2 = new Owner
             {
-                id = 1,
+                id = 2,
                 Name = " Carg "
             };
 
             Owner owner3 = new Owner
             {
-                id = 1,
+                id = 3,
                 Name = " Farmand "
             };
             OwnerList.Add(owner1);

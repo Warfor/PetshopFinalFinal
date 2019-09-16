@@ -32,7 +32,7 @@ namespace Infrastructure.Repositories
 
         public IEnumerable<Owner> ReadAll()
         {
-            return FakeDB.OwnerList;
+            return FakeDB.OwnerList.ToList();
         }
 
         public Owner FindOwnerById(int ID)

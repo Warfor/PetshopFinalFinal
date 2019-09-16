@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Core.ApplicationService;
 using Core.DomainService;
 using Entity;
 
@@ -11,20 +12,22 @@ namespace Infrastructure.Repositories
     {
         public Owner Create(Owner owner)
         {
-            throw new NotImplementedException();
-        }
-
-        public Owner Update(int id)
-        {
-             Owner owner = FindOwnerById(id);
-            owner = Update(id);
-
+            owner.id = FakeDB.OwnerId++;
+            FakeDB.OwnerList.Add(owner);
             return owner;
         }
 
-        public Owner Remove(Owner owner)
+        public Owner Update(Owner ownerUpdate)
         {
-            Remove(owner);
+            var owner = FindOwnerById(ownerUpdate.id);
+            owner.Name = ownerUpdate.Name;
+            return owner;
+        }
+
+        public void Remove(Owner owner)
+        {
+            FakeDB.OwnerList.Remove(owner);
+
         }
 
         public IEnumerable<Owner> ReadAll()

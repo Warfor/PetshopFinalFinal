@@ -11,5 +11,6 @@ namespace Core.ApplicationService
         void RemoveOwner(int id);
         Owner UpdateOwner(Owner owners);
         Owner FindOwnerById(int id);
+        List<Owner> ReadAll();
     }
 }

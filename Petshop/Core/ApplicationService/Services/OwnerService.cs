@@ -13,45 +13,40 @@ namespace Core.ApplicationService
     {
         private IOwnerRepository ownerRepository;
 
-        public OwnerService(IOwnerRepository OwnerRepo)
-        {
-            ownerRepository = OwnerRepo;
-        }
-        public Owner Create(Owner owner)
-        {
-            return ownerRepository.Create(owner);
-        }
 
-        public IEnumerable<Owner> ReadAll()
-        {
-            return ownerRepository.ReadAll().ToList();
-        }
-
-        public void Remove(Owner owner)
+        public void RemoveOwner(Owner owner)
         {
             ownerRepository.Remove(owner);
         }
 
-        public Owner Update(int id)
+        public void UpdateOwner(Owner owners)
         {
-            
-        }
-
-        public void RemoveOwner(int id)
-        {
-            ownerRepository.Remove(id);
-        }
-
-        public Owner UpdateOwner(int owners)
-        {
-            Owner owner = ownerRepository.FindOwnerById(owners);
-            owner = ownerRepository.Update(owner);
-            return owner;
+            ownerRepository.Update(owners);
         }
 
         public Owner FindOwnerById(int id)
         {
-            throw new NotImplementedException();
+            {
+                foreach (var owner in ReadAll())
+                {
+                    if (owner.id == id)
+
+                    {
+                        return owner;
+                    }
+                }
+                return null;
+            }
+        }
+
+        public List<Owner> ReadAll()
+        {
+            return ownerRepository.ReadAll().ToList();
+        }
+
+        public Owner CreateOwner(Owner owner)
+        {
+            return ownerRepository.Create(owner);
         }
     }
 }

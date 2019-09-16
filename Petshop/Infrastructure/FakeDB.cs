@@ -87,6 +87,30 @@ namespace Infrastructure
             PetList.Add(pet4);
             PetList.Add(pet5);
             PetList.Add(pet6);
+
+
+            Owner owner1 = new Owner
+            {
+                id = 1,
+                Name = " Karl "
+            };
+
+            Owner owner2 = new Owner
+            {
+                id = 1,
+                Name = " Carg "
+            };
+
+            Owner owner3 = new Owner
+            {
+                id = 1,
+                Name = " Farmand "
+            };
+            OwnerList.Add(owner1);
+            OwnerList.Add(owner2);
+            OwnerList.Add(owner3);
         }
     }
 }
+
+

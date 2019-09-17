@@ -15,5 +15,7 @@ namespace Core.DomainService
 
         IEnumerable<Owner> ReadAll();
 
+        Owner FindOwnerById(int id);
+
     }
 }

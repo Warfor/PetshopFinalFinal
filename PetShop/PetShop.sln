@@ -16,6 +16,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{7C960306-141E-4B1C-98C3-73780899818E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{4DB95994-7961-46EB-86F6-C3ECBD5E2F28}"
+	ProjectSection(SolutionItems) = preProject
+		PetShop.Infrastructure.SQL\PetShopContext.cs = PetShop.Infrastructure.SQL\PetShopContext.cs
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsolePetShop", "ConsolePetShop\ConsolePetShop.csproj", "{16BAD479-7B38-4881-A95E-7F455FB47018}"
 EndProject

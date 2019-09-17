@@ -12,5 +12,10 @@ namespace Core.DomainService
         Pet create(Pet pet);
 
         void RemovePet(int id);
+
+        void UpdatePet(Pet pet);
+
+        Pet FindPetById(int id);
+
     }
 }

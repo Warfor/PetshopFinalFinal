@@ -38,7 +38,7 @@ namespace PetShop.Infrastructure.SQL.Repositories
 
         public Owner FindOwnerById(int id)
         {
-            return _context.owners.
+            return _context.owners.Find(id);
         }
     }
 }

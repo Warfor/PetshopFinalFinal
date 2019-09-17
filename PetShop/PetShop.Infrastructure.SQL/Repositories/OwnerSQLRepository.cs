@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PetShop.Infrastructure.SQL
+namespace PetShop.Infrastructure.SQL.Repositories
 {
-    class PetShopRepository
+    class OwnerSQLRepository
     {
     }
 }

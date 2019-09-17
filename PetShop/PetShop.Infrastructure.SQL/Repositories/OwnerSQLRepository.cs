@@ -16,7 +16,9 @@ namespace PetShop.Infrastructure.SQL.Repositories
         }
         public Owner Create(Owner owner)
         {
-            throw new NotImplementedException();
+            Owner OwnerToReturn = _context.Attach(owner).Entity;
+            _context.SaveChanges();
+            return OwnerToReturn;
         }
 
         public Owner Update(Owner ownerUpdate)
@@ -26,7 +28,7 @@ namespace PetShop.Infrastructure.SQL.Repositories
 
         public void Remove(Owner owner)
         {
-            throw new NotImplementedException();
+            
         }
 
         public IEnumerable<Owner> ReadAll()
@@ -36,7 +38,7 @@ namespace PetShop.Infrastructure.SQL.Repositories
 
         public Owner FindOwnerById(int id)
         {
-            throw new NotImplementedException();
+            return _context.owners.
         }
     }
 }

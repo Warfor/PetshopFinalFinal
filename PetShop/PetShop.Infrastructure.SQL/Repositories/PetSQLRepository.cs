@@ -23,7 +23,9 @@ namespace PetShop.Infrastructure.SQL
 
         public Pet create(Pet pet)
         {
-            throw new NotImplementedException();
+            Pet PetToReturn = _context.Attach(pet).Entity;
+            _context.SaveChanges();
+            return PetToReturn;
         }
 
         public void RemovePet(int id)
@@ -32,6 +34,11 @@ namespace PetShop.Infrastructure.SQL
         }
 
         public void UpdatePet(Pet pet)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Pet FindPetById(int id)
         {
             throw new NotImplementedException();
         }

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Core.ApplicationService;
 using Core.ApplicationService.Services;
 using Core.DomainService;
+using Entity;
 using Infrastructure;
 using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -46,7 +47,13 @@ namespace UI.RestApi
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
-            {
+                using(var scope = app.ApplicationServices.CreateScope())
+                {
+                    var context = scope.ServiceProvider.GetRequiredService<PetShopContext>();
+                    context.Database.EnsureDeleted();
+                    context.Database.EnsureCreated();
+                    context.Pets.Add(new Pet());
+                    DBfiller.Seed(context);
                 app.UseDeveloperExceptionPage();
             }
             else

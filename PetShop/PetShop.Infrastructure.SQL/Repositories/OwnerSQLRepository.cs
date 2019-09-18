@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Core.DomainService;
 using Entity;
@@ -28,12 +29,14 @@ namespace PetShop.Infrastructure.SQL.Repositories
 
         public void Remove(Owner owner)
         {
-            
+            _context.owners.ToList().Find(own => own.id == owner.id);
+            _context.owners.Remove(owner);
+            _context.SaveChanges();
         }
 
         public IEnumerable<Owner> ReadAll()
         {
-            throw new NotImplementedException();
+            return _context.owners.ToList();
         }
 
         public Owner FindOwnerById(int id)

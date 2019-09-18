@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Core.ApplicationService;
 using Core.DomainService;
@@ -18,7 +19,7 @@ namespace PetShop.Infrastructure.SQL
 
         public IEnumerable<Pet> ReadAll()
         {
-            throw new NotImplementedException();
+            return _context.Pets.ToList();
         }
 
         public Pet create(Pet pet)
@@ -30,7 +31,9 @@ namespace PetShop.Infrastructure.SQL
 
         public void RemovePet(int id)
         {
-            throw new NotImplementedException();
+           Pet pet = _context.Pets.ToList().Find(p => p.Id == id);
+            _context.Pets.Remove(pet);
+            _context.SaveChanges();
         }
 
         public void UpdatePet(Pet pet)
@@ -40,7 +43,7 @@ namespace PetShop.Infrastructure.SQL
 
         public Pet FindPetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Pets.Find(id);
         }
     }
 }

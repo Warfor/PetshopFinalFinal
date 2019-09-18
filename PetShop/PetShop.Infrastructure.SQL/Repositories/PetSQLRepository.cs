@@ -38,7 +38,8 @@ namespace PetShop.Infrastructure.SQL
 
         public void UpdatePet(Pet pet)
         {
-            throw new NotImplementedException();
+            Pet pet1 = _context.Pets.ToList().First(p => p.Id == pet.Id);
+            _context.SaveChanges();
         }
 
         public Pet FindPetById(int id)

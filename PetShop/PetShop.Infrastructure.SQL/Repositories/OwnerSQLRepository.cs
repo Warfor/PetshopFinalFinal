@@ -24,7 +24,10 @@ namespace PetShop.Infrastructure.SQL.Repositories
 
         public Owner Update(Owner ownerUpdate)
         {
-            throw new NotImplementedException();
+           Owner owner1 = _context.owners.ToList().First(o => o.id == ownerUpdate.id);
+            owner1 = ownerUpdate;
+            _context.SaveChanges();
+            return owner1;
         }
 
         public void Remove(Owner owner)

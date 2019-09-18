@@ -8,7 +8,7 @@ using Entity;
 
 namespace PetShop.Infrastructure.SQL
 {
-    class PetSQLRepository : IPetRepository
+    public class PetSQLRepository : IPetRepository
     {
         private PetShopContext _context;
 
@@ -39,6 +39,7 @@ namespace PetShop.Infrastructure.SQL
         public void UpdatePet(Pet pet)
         {
             Pet pet1 = _context.Pets.ToList().First(p => p.Id == pet.Id);
+            pet1 = pet;
             _context.SaveChanges();
         }
 

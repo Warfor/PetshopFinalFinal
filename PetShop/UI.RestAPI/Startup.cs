@@ -18,6 +18,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using PetShop.Infrastructure.SQL;
+using PetShop.Infrastructure.SQL.Repositories;
 
 namespace UI.RestApi
 {
@@ -26,7 +27,6 @@ namespace UI.RestApi
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            FakeDB.InitData();
         }
         
         public IConfiguration Configuration { get; }
@@ -34,13 +34,13 @@ namespace UI.RestApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IPetRepository, PetRepository>();
+            services.AddScoped<IPetRepository, PetSQLRepository>();
             services.AddScoped<IPetService, PetService>();
             services.AddScoped<IOwnerService, OwnerService>();
-            services.AddScoped<IOwnerRepository, OwnerRepository>();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddScoped<IOwnerRepository, OwnerSQLRepository>();
 
-            services.AddDbContext<PetShopContext>(opt => opt.UseSqlite(" Date Source=PetShop.db"));
+            services.AddDbContext<PetShopContext>(opt => opt.UseSqlite("Data Source=PetShop.db"));
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

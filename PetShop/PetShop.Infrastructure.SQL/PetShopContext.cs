@@ -11,16 +11,16 @@ namespace PetShop.Infrastructure.SQL
         public PetShopContext(DbContextOptions opt)
             : base(opt) { }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            {
-                modelBuilder.Entity<Pet>()
-                    .HasOne(p => p.Race)
-                    .WithMany();
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+            //base.OnModelCreating(modelBuilder);
+           // {
+                //modelBuilder.Entity<Pet>()
+                    //.HasOne(p => p.Race)
+                    //.WithMany();
 
-            }
-        }
+            //}
+        //}
 
         public DbSet<Pet> Pets { get; set; }
         public DbSet<Owner> owners { get; set; }

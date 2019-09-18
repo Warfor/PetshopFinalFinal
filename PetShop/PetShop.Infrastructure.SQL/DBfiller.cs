@@ -15,7 +15,6 @@ namespace PetShop.Infrastructure.SQL
         {
             Pet pet1 = new Pet
             {
-                Id = 1,
                 Birthdate = DateTime.Now,
                 Name = " Trex ",
                 Color = " White ",
@@ -27,7 +26,6 @@ namespace PetShop.Infrastructure.SQL
 
             Pet pet2 = new Pet
             {
-                Id = 2,
                 Birthdate = DateTime.Now,
                 Name = " Rex ",
                 Color = " black ",
@@ -38,7 +36,6 @@ namespace PetShop.Infrastructure.SQL
             };
             Pet pet3 = new Pet
             {
-                Id = 3,
                 Birthdate = DateTime.Now,
                 Name = " Ricko ",
                 Color = " black ",
@@ -49,7 +46,6 @@ namespace PetShop.Infrastructure.SQL
             };
             Pet pet4 = new Pet
             {
-                Id = 4,
                 Birthdate = DateTime.Now,
                 Name = " Teison ",
                 Color = " white ",
@@ -60,7 +56,6 @@ namespace PetShop.Infrastructure.SQL
             };
             Pet pet5 = new Pet
             {
-                Id = 5,
                 Birthdate = DateTime.Now,
                 Name = " Coli ",
                 Color = " White ",
@@ -71,7 +66,6 @@ namespace PetShop.Infrastructure.SQL
             };
             Pet pet6 = new Pet
             {
-                Id = 6,
                 Birthdate = DateTime.Now,
                 Name = " Dummi ",
                 Color = " orange ",
@@ -91,19 +85,16 @@ namespace PetShop.Infrastructure.SQL
 
             Owner owner1 = new Owner
             {
-                id = 1,
                 Name = " Karl "
             };
 
             Owner owner2 = new Owner
             {
-                id = 2,
                 Name = " Carg "
             };
 
             Owner owner3 = new Owner
             {
-                id = 3,
                 Name = " Farmand "
             };
             dbFillContext.Add(owner1);

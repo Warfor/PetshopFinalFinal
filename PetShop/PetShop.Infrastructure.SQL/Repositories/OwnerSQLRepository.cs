@@ -8,7 +8,7 @@ using SQLitePCL;
 
 namespace PetShop.Infrastructure.SQL.Repositories
 {
-    class OwnerSQLRepository : IOwnerRepository
+    public class OwnerSQLRepository : IOwnerRepository
     {
         private PetShopContext _context;
         public OwnerSQLRepository(PetShopContext context)
